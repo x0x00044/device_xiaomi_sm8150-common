@@ -8,6 +8,11 @@ COMMON_PATH := device/xiaomi/sm8150-common
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# APEX
+ifeq ($(TARGET_IS_LEGACY),true)
+OVERRIDE_TARGET_FLATTEN_APEX := true
+endif
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
